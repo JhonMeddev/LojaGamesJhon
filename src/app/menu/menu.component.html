@@ -1,0 +1,23 @@
+<nav class="navbar bg-danger color-ligth">
+
+    <div class="container-fluid">
+
+      <a *ngIf="!auth.logado()" routerLink='/inicio'><i class="navbar-brand text-light fas fa-gamepad fa-3x"> T I N D I N</i></a>
+      <a *ngIf="auth.logado()" routerLink='/inicioLogin'><i class="navbar-brand text-light fas fa-gamepad fa-3x"> T I N D I N</i></a>
+
+
+      <form *ngIf="!auth.logado()" class="d-flex align-items-sm-center" role="search">
+
+        <input class="form-control me-2" type="search" placeholder="Search game here" aria-label="Search">
+
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+
+      </form>
+
+      <a *ngIf="!auth.logado()" routerLink='/login'><i class="fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i></a>
+      <a *ngIf="auth.logado()" (click)="sair()" routerLink='/inicio'><i class="fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i></a>
+
+
+    </div>
+
+  </nav>

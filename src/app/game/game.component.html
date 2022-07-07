@@ -1,0 +1,15 @@
+<div class="container-fluid row">
+
+  <div class="col-md-6" *ngFor="let item of game | async">
+
+    <ng-container *ngFor="let photo of item.photos">
+      <img src="{{photo.url}}" alt="">
+    </ng-container>
+
+  </div>
+
+  <div class="col-md-6">
+
+  </div>
+
+</div>

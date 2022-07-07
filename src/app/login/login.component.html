@@ -1,0 +1,38 @@
+<section class="vh-100 bg-black d-flex justify-content-center align-items-center">
+
+    <div class="container-fluid ">
+
+            <div class="col-md-12 d-flex justify-content-center">
+
+                <form class="bg-white border col-md-4 mt-5 rounded">
+
+                    <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center">SING IN</h3>
+                    <p class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center">Insert your Account Information</p>
+
+                    <div class="mb-3 d-flex justify-content-center align-items-center row">
+                        <div class="col-sm-7">
+                          <input [(ngModel)]="login.email" type="email" id="email" name="email" placeholder="Username or Email" class="form-control border border-muted">
+                        </div>
+                      </div>
+
+                      <div class="mb-3 d-flex justify-content-center align-items-center row">
+                        <div class="col-sm-7">
+                          <input [(ngModel)]="login.password" type="password" name="password" id="password" placeholder="Password" class="form-control border border-muted" >
+                        </div>
+
+                      </div>
+
+                      <div class="mb-4 ml-3 text-center">
+                        <button class="btn btn-dark btn-lg fs-3" type="submit" (click)="entrar()">Login your Account</button>
+                      </div>
+
+                      <p class="ml-5 text-center">No Account ? Send email fabio@tindin.com.br</p>
+
+                </form>
+
+            </div>
+
+
+    </div>
+
+</section>

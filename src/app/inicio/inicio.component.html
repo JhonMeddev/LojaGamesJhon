@@ -1,0 +1,53 @@
+<div class="container-fluid bg-black">
+
+    <div class="container">
+
+        <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active mt-5">
+                <img src="https://s2.glbimg.com/xcx11ILBoDJIgMvimBaqeJkvs3o=/0x0:1918x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/G/q/Yss465TJSc7iTaNA8bhA/gta-5-nova-geracao-1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item mt-5">
+                <img src="https://cdn-ext.fanatical.com/production/product/1280x720/9f765b68-118f-432f-a282-c3e1cd1f976c.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item mt-5">
+                <img src="https://www.esportelandia.com.br/wp-content/uploads/2019/10/1.-onde-jogar-counter-strike.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+    </div>
+
+    <div class="col-md-12 row">
+
+      <div class="container col-md-3">
+        <div class="card-group text-center mr-3" *ngFor="let item of listaGames$ | async">
+            <div class="card mb-5">
+              <ng-container *ngFor="let photo of item.photos" >
+                <img src="{{photo.url}}" class="card-img-top" alt="...">
+              </ng-container>
+              <div class="card-body">
+                <h5 [routerLink]="['/game']" [queryParams]="{id: item._id}" class="card-title">{{item.title}}</h5>
+                <p class="card-text">$ {{item.mediumPrince}} </p>
+                <p class="card-text"><small class="text-muted">{{item.rating}}</small></p>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
