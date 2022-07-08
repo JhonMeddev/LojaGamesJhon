@@ -1,17 +1,63 @@
-.container-fluid{
-  min-height: 100vh;
-  background-color: black;
+.container-fluid {
+    min-height: 100vh;
+    background-color: black;
 }
 
-form{
-  width: 60%;
-  height: 40px;
+form {
+    width: 100%;
+    height: 40px;
 }
 
-.tamanho{
-  width: 100%;
-  border: solid 1px white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+form input {
+    margin-right: 15px;
+}
+
+.header {
+    width: 100% !important;
+    display: flex;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0);
+    min-height: 4rem;
+}
+
+.card img {
+    width: 100%;
+    height: 32vh;
+    border-radius: 5px;
+}
+
+.cards {
+    max-width: 100vw;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
