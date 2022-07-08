@@ -12,7 +12,6 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { InicioLoginComponent } from './inicio-login/inicio-login.component';
 import { GameComponent } from './game/game.component';
 
 
@@ -24,7 +23,6 @@ import { GameComponent } from './game/game.component';
     LoginComponent,
     CadastrarComponent,
     InicioComponent,
-    InicioLoginComponent,
     GameComponent
   ],
   imports: [

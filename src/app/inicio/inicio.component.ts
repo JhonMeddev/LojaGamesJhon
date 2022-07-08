@@ -1,3 +1,5 @@
+import { AuthService } from './../service/auth.service';
+import { PhotoModel } from './../model/PhotoModel';
 import { Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { Game } from './../model/Game';
@@ -13,8 +15,14 @@ export class InicioComponent implements OnInit {
 
  public listaGames$: Observable<Game[]>
 
+
+ titleGame: string
+ listaGames: Game[]
+
+
   constructor(
     private router: Router,
+    public auth: AuthService,
     private inicioService: InicioService
   ) { }
 
@@ -23,5 +31,14 @@ export class InicioComponent implements OnInit {
 
   }
 
+  findByTitle(){
+    if(this.titleGame == ''){
+      this.inicioService.getAllGames
+    }else{
+      this.inicioService.getByTitleGames(this.titleGame).subscribe((resp: Game[])=>{
+        this.listaGames = resp
+      })
+    }
+  }
 
 }

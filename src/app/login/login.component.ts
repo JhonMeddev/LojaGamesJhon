@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       console.log(environment.token)
       console.log(environment.user)
 
-      this.router.navigate(['/inicioLogin'])
+      this.router.navigate(['/inicio'])
     }, erro => {
       if(erro.status == 401){
         alert ('Usuario ou senha invalidos !')

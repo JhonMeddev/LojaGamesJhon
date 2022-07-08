@@ -1,53 +1,91 @@
 <div class="container-fluid bg-black">
 
+  <!----------------------MENU LOGADO----------------->
+
+  <nav class="navbar color-ligth py-5" *ngIf="!auth.logado()">
+
     <div class="container">
 
-        <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="true">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active mt-5">
-                <img src="https://s2.glbimg.com/xcx11ILBoDJIgMvimBaqeJkvs3o=/0x0:1918x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/G/q/Yss465TJSc7iTaNA8bhA/gta-5-nova-geracao-1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item mt-5">
-                <img src="https://cdn-ext.fanatical.com/production/product/1280x720/9f765b68-118f-432f-a282-c3e1cd1f976c.jpeg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item mt-5">
-                <img src="https://www.esportelandia.com.br/wp-content/uploads/2019/10/1.-onde-jogar-counter-strike.png" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+        <div class="text-light tamanho">
+          <div>
+            <h1>GAMES</h1>
+            <p>Games manager portal</p>
           </div>
-
+          <div>
+            <form class="d-flex" role="search">
+                <input [(ngModel)]="titleGame" (keyup)='findByTitle()' class="form-control border border-danger" type="search" placeholder="Search from" aria-label="Search">
+                <button routerLink="/cadastroGame" class="px-5 btn btn-danger" type="submit">NEW GAME</button>
+            </form>
+        </div>
+        </div>
     </div>
 
-    <div class="col-md-12 row">
+  </nav>
 
-      <div class="container col-md-3">
-        <div class="card-group text-center mr-3" *ngFor="let item of listaGames$ | async">
-            <div class="card mb-5">
-              <ng-container *ngFor="let photo of item.photos" >
-                <img src="{{photo.url}}" class="card-img-top" alt="...">
-              </ng-container>
-              <div class="card-body">
-                <h5 [routerLink]="['/game']" [queryParams]="{id: item._id}" class="card-title">{{item.title}}</h5>
-                <p class="card-text">$ {{item.mediumPrince}} </p>
-                <p class="card-text"><small class="text-muted">{{item.rating}}</small></p>
-              </div>
-            </div>
+  <!----------------------MENU LOGADO----------------->
+
+
+
+  <!--------------CARROSEL DE IMAGENS----------------->
+
+  <div class="container py-5" *ngIf="!auth.logado()">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://compass-ssl.xbox.com/assets/d7/29/d7299dda-c153-4b60-9040-a6266b22ffd6.jpg?n=Assassins-Creed-Valhalla_GLP-Page-Hero-0_NCSA_1083x609_02.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://sm.ign.com/t/ign_br/news/m/mortal-kom/mortal-kombat-x-boss-addresses-online-multiplayer_6yap.h720.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://s2.glbimg.com/5XWAiZWLsKaTFEsjNl89L5NjMpE=/0x0:695x381/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/y/W/BbDO06TMOuDz1sTpcJMA/2017-01-19-resident-evil-7-biohazard-artwork-004.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
+  </div>
+
+  <!--------------CARROSEL DE IMAGENS----------------->
+
+
+
+ <!--------------CONTAINER DOS JOGOS----------------->
+
+ <div class="container p-5">
+  <div class="row row-cols-2 row-cols-lg-1 g-lg-3">
+    <div class="col">
+      <div class="card-group text-center">
+
+        <div class="p-3 card border-0" style="width: 18rem;" *ngFor="let item of listaGames$ | async">
+          <ng-container *ngFor="let photo of item.photos ; let it = index">
+            <img class="card-img-top" src="{{photo.url}}" alt="Imagem de capa do card">
+            <div class="card-body bg-black text-white">
+              <h5 class="card-title">{{item.title}}</h5>
+              <p class="card-text">{{item.mediumPrince}}</p>
+              <p class="btn btn-danger small rounded">{{item.rating}}/10</p>
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ </div>
+
+  <!--------------CONTAINER DOS JOGOS----------------->
 
 </div>

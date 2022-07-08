@@ -1,15 +1,56 @@
-<div class="container-fluid row">
+<div class="container-fluid bg-black tela">
 
-  <div class="col-md-6" *ngFor="let item of game | async">
+  <div class="row text-light pt-5">
+    <div class="titulo d-flex align-items-center justify-content-center">
 
-    <ng-container *ngFor="let photo of item.photos">
-      <img src="{{photo.url}}" alt="">
-    </ng-container>
+      <i class="mr-2 ml-2 fas fa-home"></i> <h1 class="small my-0"> | Name Of Game Here</h1>
 
+    </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="container-fluid d-flex justify-content-center row mt-5">
 
+    <div class="col-md-4">
+
+      <img src="https://cdn1.epicgames.com/epic/offer/ACRG_Store_Portrait_1280x1420-1280x1420-5cba5dab889312a3ee8e0cb414f1ebaa.png" alt="" class="img-fluid imgCapa">
+
+    </div>
+
+    <div class="col-md-4 text-light">
+
+      <h4><span class="badge bg-danger">7,5/10</span>  Name of Game Here</h4>
+      <p class="small umaLinha"> Resume game here limited of one line...</p>
+      <hr>
+      <ul>
+        <li>Genres: </li>
+        <li>Studio: </li>
+        <li>Productor:</li>
+        <li>Total votes:</li>
+        <li>Company:</li>
+        <li>Platforms:</li>
+        <li>Tags:</li>
+      </ul>
+      <hr>
+      <h5 class="muted">Medium Price</h5><span class="text-danger">$10.00</span>
+      <p class="small mt-5 mb-5">Release date: 01/01/2022</p>
+      <button class="btn btn-danger px-2 mb-3">VOTE NOW</button>
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="row text-light pt-5">
+    <div class="titulo d-flex align-items-center justify-content-center">
+
+      <h1 class="small text-danger mb-5">DESCRIPTION</h1>
+
+    </div>
+  </div>
+
+  <div class="container d-flex align-items-center justify-content-center bg-secondary text-dark descricao">
+    <p class=" ">
+      Based in ancient history, the story follows the titular protagonist, Kratos, a Spartan warrior and later the God of War
+    </p>
   </div>
 
 </div>

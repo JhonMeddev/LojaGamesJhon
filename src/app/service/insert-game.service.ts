@@ -11,12 +11,10 @@ import { Injectable } from '@angular/core';
 })
 export class InsertGameService {
 
-
-
   constructor(private http: HttpClient) { }
 
   token = {
-    headers: new HttpHeaders().set('x-api-key', localStorage.getItem("Token") || '')
+    headers: new HttpHeaders().set('x-api-key', environment.token)
   }
 
   getAllGames(): Observable<Game[]>{
@@ -24,11 +22,20 @@ export class InsertGameService {
   }
 
   getGameById(): Observable <Game[]>{
-    return this.http.get<Game[]>('https://api-labs.tindin.com.br/games/${_id}')
+    return this.http.get<Game[]>('https://api-labs.tindin.com.br/games/{_id}')
   }
 
   postGame(game: Game): Observable<Game>{
     return this.http.post<Game>('https://api-labs.tindin.com.br/games', game, this.token)
+  }
+
+  getAllCompany(): Observable<GameCompany[]>{
+    return this.http.get<GameCompany[]>('https://api-labs.tindin.com.br/games/companies')
+
+  }
+
+  getAllStudio():Observable<GameStudio[]>{
+    return this.http.get<GameStudio[]>('https://api-labs.tindin.com.br/games/studios')
   }
 
 }

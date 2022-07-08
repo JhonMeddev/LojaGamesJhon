@@ -1,0 +1,17 @@
+.container-fluid{
+  min-height: 100vh;
+  background-color: black;
+}
+
+form{
+  width: 60%;
+  height: 40px;
+}
+
+.tamanho{
+  width: 100%;
+  border: solid 1px white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

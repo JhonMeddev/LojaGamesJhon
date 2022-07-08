@@ -2,8 +2,7 @@
 
     <div class="container-fluid">
 
-      <a *ngIf="!auth.logado()" routerLink='/inicio'><i class="navbar-brand text-light fas fa-gamepad fa-3x"> T I N D I N</i></a>
-      <a *ngIf="auth.logado()" routerLink='/inicioLogin'><i class="navbar-brand text-light fas fa-gamepad fa-3x"> T I N D I N</i></a>
+      <a routerLink='/inicio'><i class="navbar-brand text-light fas fa-gamepad fa-3x"> T I N D I N</i></a>
 
 
       <form *ngIf="!auth.logado()" class="d-flex align-items-sm-center" role="search">
@@ -14,8 +13,8 @@
 
       </form>
 
-      <a *ngIf="!auth.logado()" routerLink='/login'><i class="fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i></a>
-      <a *ngIf="auth.logado()" (click)="sair()" routerLink='/inicio'><i class="fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i></a>
+      <a *ngIf="!auth.logado()" routerLink='/login'>LOGAR<i class="fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i></a>
+      <a *ngIf="auth.logado()" (click)="sair()" routerLink='/inicio'>SAIR <i class="fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i></a>
 
 
     </div>
