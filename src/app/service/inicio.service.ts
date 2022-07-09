@@ -16,8 +16,8 @@ export class InicioService{
     return this.http.get<any>('https://api-labs.tindin.com.br/games').pipe(map(({games}) => (games)))
   }
 
-  getGameById(): Observable <Game[]>{
-    return this.http.get<Game[]>('https://api-labs.tindin.com.br/games/${_id}')
+  getGameById(id: string): Observable <Game>{
+    return this.http.get<Game>(`https://api-labs.tindin.com.br/games/${id}`)
   }
 
   getByTitleGames(title: string): Observable<Game[]>{

@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'cadastroGame', component: CadastrarComponent},
-  {path: 'game', component: GameComponent}
+  {path: 'game/:_id', component: GameComponent}
 
 ];
 

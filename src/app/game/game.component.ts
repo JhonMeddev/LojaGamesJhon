@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InicioService } from './../service/inicio.service';
 import { Game } from './../model/Game';
 import { Observable } from 'rxjs';
@@ -11,16 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  public game: Observable<Game[]>
+  gameId: Game = new Game();
+
+  public game$: Game
+
+
+
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private inicioService: InicioService
   ) { }
 
   ngOnInit(): void {
 
-    this.game = this.inicioService.getGameById()
+    let id = this.route.snapshot.params["_id"];
+
+    this.findByIdGame(id)
+
+  }
+
+
+
+  findByIdGame(id: string){
+    this.inicioService.getGameById(id).subscribe((resp : Game)=>{
+      this.gameId = resp
+      console.log(resp)
+    })
   }
 
 }

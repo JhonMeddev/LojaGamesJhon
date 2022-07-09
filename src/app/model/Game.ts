@@ -9,7 +9,7 @@ export class Game{
     public description: string
     public photos: PhotoModel []
     public videos: VideoModel []
-    public mediumPrince: number
+    public mediumPrice: number
     public studio : GameStudio
     public company: GameCompany
     public releaseYear: number

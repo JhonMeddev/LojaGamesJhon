@@ -12,13 +12,13 @@
 
     <div class="col-md-4">
 
-      <img src="https://cdn1.epicgames.com/epic/offer/ACRG_Store_Portrait_1280x1420-1280x1420-5cba5dab889312a3ee8e0cb414f1ebaa.png" alt="" class="img-fluid imgCapa">
+      <img src="{{game$.photos[0].url}}">
 
     </div>
 
     <div class="col-md-4 text-light">
 
-      <h4><span class="badge bg-danger">7,5/10</span>  Name of Game Here</h4>
+      <h4><span class="badge bg-danger">{{game$.rating}}/10</span>  {{game$.title}}</h4>
       <p class="small umaLinha"> Resume game here limited of one line...</p>
       <hr>
       <ul>
