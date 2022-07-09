@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
   }
 
   sair(){
-    this.router.navigate(['/inicio'])
+    this.router.navigate(['/login'])
     environment.token = ''
     environment.user =  {
        _id: ''

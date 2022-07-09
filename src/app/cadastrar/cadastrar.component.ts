@@ -30,6 +30,8 @@ export class CadastrarComponent implements OnInit {
       alert('Desconectado, faça login novamente !')
       this.router.navigate(['/login'])
     }
+
+    this.findAllGames()
   }
 
   cadastrar(){
@@ -38,10 +40,18 @@ export class CadastrarComponent implements OnInit {
     this.insertGameService.postGame(this.insertGame).subscribe((resp: Game)=>{
       this.insertGame = resp
       alert('Game Cadastrado com Sucesso!')
+      this.router.navigate(['/inicio'])
 
     })
   }
 
+
+  findAllGames(){
+    this.insertGameService.getAllGames().subscribe((resp: Game[]) => {
+      this.listaGames = resp
+      console.log(resp)
+    })
+  }
 
   adicionarMidia(){
 

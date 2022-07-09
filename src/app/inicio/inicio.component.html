@@ -67,7 +67,7 @@
 
   <div class="container p-5">
       <div class="cards text-light">
-          <div *ngFor="let item of listaGames$ | async; paginate: { itemsPerPage: 4, currentPage: pag }">
+          <div *ngFor="let item of listaGames$ | async">
               <div class="card">
                   <img [routerLink]="['/game', item._id]" src="{{item.photos[0].url}}">
                   <div class="descricao mt-3">
@@ -79,9 +79,7 @@
           </div>
       </div>
 
-      <div class="text-center">
-        <pagination-controls (pageChange)="pag = $event"></pagination-controls>
-      </div>
+
 
   </div>
 

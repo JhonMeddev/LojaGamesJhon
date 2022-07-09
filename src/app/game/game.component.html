@@ -12,16 +12,16 @@
 
     <div class="col-md-4">
 
-      <img src="{{game$.photos[0].url}}">
+      <img src="{{gameId.photos[0].url}}">
 
     </div>
 
     <div class="col-md-4 text-light">
 
-      <h4><span class="badge bg-danger">{{game$.rating}}/10</span>  {{game$.title}}</h4>
+      <h4><span class="badge bg-danger">nota/10</span>  TITULO</h4>
       <p class="small umaLinha"> Resume game here limited of one line...</p>
       <hr>
-      <ul>
+      <ul class="lista">
         <li>Genres: </li>
         <li>Studio: </li>
         <li>Productor:</li>
@@ -49,7 +49,7 @@
 
   <div class="container d-flex align-items-center justify-content-center bg-secondary text-dark descricao">
     <p class=" ">
-      Based in ancient history, the story follows the titular protagonist, Kratos, a Spartan warrior and later the God of War
+      {{gameId.description}}
     </p>
   </div>
 

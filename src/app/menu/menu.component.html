@@ -16,7 +16,7 @@
       <div class="d-flex align-items-center login" >
 
         <a *ngIf="!auth.logado()" routerLink='/login' class="px-3">LOGAR</a>
-        <a *ngIf="auth.logado()" (click)="sair()" routerLink='/inicio' class="px-3">SAIR</a><i class="ml-2 fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i>
+        <a *ngIf="auth.logado()" (click)="sair()" class="px-3">SAIR</a><i class="ml-2 fas fa-user-circle fa-2x rounded-circle border border-white border-2 ml-5 mr-5"></i>
 
       </div>
 

@@ -34,7 +34,7 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="tituloImg">Titulo imagem</label>
-          <input  name="foto" type="text" class="form-control" id="nomePhoto" placeholder="Descrição da foto">
+          <input   name="foto" type="text" class="form-control" id="nomePhoto" placeholder="Descrição da foto">
         </div>
         <div class="form-group">
           <label for="url">URL da imagem</label>
@@ -51,7 +51,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="adicionarMidia()">Save changes</button>
+        <button type="submit" class="btn btn-primary" (click)="adicionarMidia()">Save changes</button>
       </div>
     </div>
   </div>
@@ -62,19 +62,20 @@
     </div>
 
 
-        <div class="col-md-6 mt-5 mb-5">
+        <div class="col-md-6 mt-5 mb-5 d-flex">
 
-            <div class="row border bg-black">
+            <div class="row border bg-black d-flex justify-content-center">
 
-                <div class="col-md-10">
+                <div class="col-md-10 mt-5 mb-5 text-white">
 
-                    <div class="form-group border-0 bg-black">
+                    <div class="form-group border-0 d-flex align-items-center">
+                      <h5><span class="badge bg-danger mx-3">0/10</span></h5>
                         <input [(ngModel)]='insertGame.title' class="form-control bg-secondary border border-danger" type="text" placeholder="Enter game name">
                     </div>
 
                     <div class="row mb-3 form-group mt-4 border-0 bg-black">
                         <label for="genres" class="col-sm-2 col-form-label">Genres:</label>
-                        <select [(ngModel)]='insertGame.genres' multiple name="genres" id="genres">
+                        <select  multiple name="genres" id="genres">
                           <option value="Fight">Fight</option>
                           <option value="Sports">Sports</option>
                           <option value="Survival">Survival</option>
@@ -88,7 +89,7 @@
 
                     <div class="form-group mt-2 border-0 bg-black">
                         <label for="studio">Studio:</label>
-                        <select class="form-control bg-secondary border border-danger" name="studio" id="studio" placeholder="Select one studio">
+                        <select  class="form-control bg-secondary border border-danger" name="studio" id="studio" placeholder="Select one studio">
                             <!--studio aqui-->
                             <option value="">Studio</option>
                         </select>
@@ -104,7 +105,7 @@
 
                     <div class="form-group mt-2 border-0 bg-black">
                         <label for="platforms">Platforms:</label>
-                        <select class="form-control bg-secondary border border-danger"  name="platforms" id="platforms" placeholder="Select platforms">
+                        <select  class="form-control bg-secondary border border-danger"  name="platforms" id="platforms" placeholder="Select platforms">
                             <!--Platforms aqui-->
                             <option value="">PlatForms</option>
                         </select>
@@ -112,7 +113,7 @@
 
                     <div class="form-group mt-2 border-0 bg-black">
                         <label for="tags">Tags:</label>
-                        <select class="form-control bg-secondary border border-danger" name="tags" id="tags" aria-placeholder="Select tags">
+                        <select  class="form-control bg-secondary border border-danger" name="tags" id="tags" aria-placeholder="Select tags">
                             <!--Tags aqui-->
                             <option value="">Tags</option>
                         </select>

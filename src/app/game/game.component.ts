@@ -13,10 +13,6 @@ export class GameComponent implements OnInit {
 
   gameId: Game = new Game();
 
-  public game$: Game
-
-
-
 
   constructor(
     private router: Router,
@@ -24,20 +20,17 @@ export class GameComponent implements OnInit {
     private inicioService: InicioService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
-    let id = this.route.snapshot.params["_id"];
-
+   let id = this.route.snapshot.params["_id"];
     this.findByIdGame(id)
-
   }
-
 
 
   findByIdGame(id: string){
     this.inicioService.getGameById(id).subscribe((resp : Game)=>{
       this.gameId = resp
-      console.log(resp)
+      console.log(this.gameId)
     })
   }
 

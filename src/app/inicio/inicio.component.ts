@@ -19,8 +19,6 @@ export class InicioComponent implements OnInit {
  titleGame: string
  listaGames: Game[]
 
- pag : Number = 1 ;
- contador : Number = 5;
 
 
   constructor(

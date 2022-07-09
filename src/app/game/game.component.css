@@ -23,3 +23,7 @@ hr{
 .tela{
   min-height: 100vh;
 }
+
+.lista{
+  list-style-type: none;
+}
